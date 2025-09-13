@@ -8,7 +8,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed pt-3 pb-5">
-          Explore top-quality tiles, granite, and sanitary ware at Diamond Agencies. Stylish, durable, and affordable solutions for every home.
+          Explore top-quality tiles, granite and sanitary ware at Diamond Agencies. Stylish, durable and affordable solutions for every home.
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-4">

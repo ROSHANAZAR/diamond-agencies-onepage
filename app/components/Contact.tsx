@@ -13,8 +13,8 @@ export default function Contact() {
             Contact Us
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            "Let’s make your home beautiful! Reach out by phone, visit our showroom,
-            or use the map to see us in person."
+            &ldquo;Let&rsquo;s make your home beautiful! Reach out by phone,
+            visit our showroom, or use the map to see us in person.&rdquo;
           </p>
         </div>
 
