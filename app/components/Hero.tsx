@@ -1,4 +1,22 @@
+"use client";
+import { gtagEvent } from "@/app/lib/gtag";
+
 export default function Hero() {
+
+  const handleCallClick = () => {
+    gtagEvent({
+      action: "call_now_click",
+      category: "CTA",
+      label: "Call Now",
+    });}
+
+  const handleVisitClick = () => {
+    gtagEvent({
+      action: "visit_us_click",
+      category: "CTA",
+      label: "Visit Us",
+    });}
+
   return (
     <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between px-6 sm:px-10 md:px-20 pt-28 md:pt-32 bg-gray-50">
       {/* Left: Text */}
@@ -15,12 +33,14 @@ export default function Hero() {
           <a
             href="https://maps.app.goo.gl/qnX2thzRcgg243TD7"
             target="_blank"
+            onClick={handleVisitClick}
             className="bg-blue-600 text-white px-5 py-3 rounded-lg shadow hover:bg-blue-700 transition font-semibold"
           >
             Visit Us
           </a>
           <a
             href="tel:+919080561007"
+            onClick={handleCallClick}
             className="border border-blue-600 text-blue-600 px-5 py-3 rounded-lg hover:bg-blue-50 transition font-semibold"
           >
             Call Now

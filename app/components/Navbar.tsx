@@ -1,8 +1,16 @@
 "use client";
 import { useState } from "react";
+import { gtagEvent } from "@/app/lib/gtag";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const handleCallClick = () => {
+    gtagEvent({
+      action: "call_now_click",
+      category: "CTA",
+      label: "Call Now",
+    });
+  };
 
   return (
     <header className="w-full shadow-md fixed top-0 left-0 bg-white z-50">
@@ -19,7 +27,8 @@ export default function Navbar() {
 
     {/* Call Now (desktop) */}
     <a
-      href="tel:+91XXXXXXXXXX"
+      href="tel:+919080561007"
+      onClick={handleCallClick}
       className="hidden md:inline-block bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition"
     >
       Call Now
@@ -52,7 +61,9 @@ export default function Navbar() {
         <a
           href="tel:+919080561007"
           className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition text-center"
-          onClick={() => setIsOpen(false)}
+          onClick={() => {
+            handleCallClick
+            setIsOpen(false)}}
         >
           Call Now
         </a>

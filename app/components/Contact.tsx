@@ -1,6 +1,23 @@
+"use client";
+import { gtagEvent } from "@/app/lib/gtag";
 import { MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
 
 export default function Contact() {
+
+  const handleCallClick = () => {
+    gtagEvent({
+      action: "call_now_click",
+      category: "CTA",
+      label: "Call Now",
+    });}
+
+  const handleVisitClick = () => {
+    gtagEvent({
+      action: "visit_us_click",
+      category: "CTA",
+      label: "Visit Us",
+    });}
+
   return (
     <section
       id="contact"
@@ -33,6 +50,7 @@ export default function Contact() {
                 href="https://maps.app.goo.gl/qnX2thzRcgg243TD7"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleVisitClick}
                 className="text-gray-700 hover:text-blue-600 text-lg leading-relaxed"
               >
                 No:73, Palace Estate City, Kolathoor, Singaperumal Koil,
@@ -45,6 +63,7 @@ export default function Contact() {
               <PhoneIcon className="w-6 h-6 text-blue-600 shrink-0" />
               <a
                 href="tel:+919080561007"
+                onClick={handleCallClick}
                 className="text-gray-700 hover:text-blue-600 text-lg"
               >
                 +91 90805 61007
